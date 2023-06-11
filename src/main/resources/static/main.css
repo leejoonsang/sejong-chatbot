@@ -1,0 +1,355 @@
+.auto-adjust-font {
+  font-size: 10vw;
+}
+body {
+  margin: 0px;
+}
+#top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 56px;
+  flex-direction: row;
+  display: flex;
+  background-color: rgb(195, 0, 47);
+}
+.top-nav {
+  display: inline-block;
+  position: relative;
+  height: 46px;
+  width: 100%;
+  margin: 5px 20px;
+  text-align: center;
+  line-height: 46px;
+}
+#content {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 110px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.middle{
+  position: absolute;
+  height: 20px;
+  left: 0;
+  right: 0;
+  bottom: 56px;
+}
+#bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 56PX;
+  z-index: 10;
+  height: 36px;
+  background-color: lightgray;
+  display: flex;
+  padding: 9px 10px;
+  flex-direction: row;
+}
+.answer{
+  border: 0.01px solid black;
+  height: 100px;
+  bottom: 0;
+  left: 50px;
+}
+#form {
+  position: relative;
+  height: 36px;
+  width: 100%
+}
+#question {
+  display: block;
+  padding: 0 56px 0 15px;
+  border: 0;
+  border-radius: 25px;
+  height: 100%;
+
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+input:focus {outline: none;}
+
+.btn_send {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 15px 8px;
+  height: 36px;
+  width: 60px
+}
+
+
+button {
+  border: 0;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+.title {
+  position: absolute;
+  padding: 16px 20px;
+  width: 100%;
+  margin: 0;
+  height: 56px;
+  text-align: center;
+  box-sizing: border-box;
+}
+#logoImg {
+  height: 30px;
+  position: relative;
+  top: 3px;
+  text-align: center;
+}
+
+.logo {
+  margin: auto;
+  width: 150px;
+  background-image: url('./images/sejong_logo.png');
+  height: 40px;
+  overflow:hidden;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  color: white;
+  line-height: 40px;
+}
+
+#feedback {
+  color: white;
+  text-align: center;
+  width: 40%;
+  cursor: pointer;
+  min-width: 100px;
+}
+#feedback > a {
+  text-decoration: none;
+  color: white;
+}
+#feedback:hover {
+  font-weight: bold;
+}
+#list{
+  color: white;
+  text-align: center;
+  width: 40%;
+  cursor: pointer;
+  min-width: 100px;
+}
+#list:hover {
+  font-weight: bold;
+}
+.empty {
+  width: 40%
+}
+#empty1 {
+  min-width: 20px;
+}
+#empty2 {
+  min-width: 20px;
+}
+.quest_frame {
+  text-align: right;
+  padding: 10px;
+  width: 100%;
+  float: right;
+}
+.chat_quest {
+  background-color: rgb(213, 214, 210);
+  border-radius: 30px 0 30px 30px;
+  text-align: right;
+  padding: 10px;
+  max-width: 60%;
+  float: right;
+  padding: 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.answer_frame {
+  text-align: left;
+  padding: 10px;
+  width: 100%;
+  float: left;
+}
+.chat_answer {
+  background-color: rgb(255, 235, 235);
+  border-radius: 0 30px 30px 30px;
+  bottom: 0;
+  left: 50px;
+  text-align: left;
+  padding: 10px;
+  max-width: 60%;
+  float: left;
+  padding: 20px;
+  margin: 70px 0 0 0;
+  box-shadow: 2px 2px 4px rgb(183, 138, 138);
+
+}
+.answer_time {
+  margin-left: 120px;
+  color: gray;
+}
+.question_time {
+  text-align: right;
+  color: gray;
+  margin-right: 15px;
+}
+#footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 56px;
+  flex-direction: row;
+  display: flex;
+}
+.quick_btn{
+  display: inline-block;
+  position: relative;
+  height: 46px;
+  width: 100%;
+  background-color: rgb(214, 214, 214);
+  border-radius: 25px;
+  margin: 5px 20px;
+  text-align: center;
+  line-height: 46px;
+  cursor: pointer;
+}
+.quick_btn:hover{
+  background-color:rgb(163, 163, 163);
+}
+.quick_btn a {
+  text-decoration:  none;
+  color: black;
+}
+
+.faq {
+  display: inline-block;
+  position: relative;
+  width: 45%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px 5px;
+  text-align: center;
+  line-height: 46px;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px rgb(183, 138, 138);
+}
+.faq:hover {
+  background-color: rgb(253, 211, 211);
+}
+.profile {
+  background-image: url('./images/mascot.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 50px;
+  text-align: left;
+  padding: 10px;
+  max-width: 51%;
+  float: left;
+  padding: 0px;
+  width: 120px;
+  height: 120px
+
+}
+#sendBtn {
+  background-image: url('./images/send.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 0 20px 20px 20px;
+  border: 1px solid #888;
+
+
+  max-width: 70%;
+  max-height: 60%;
+  overflow-y: auto;
+}
+
+#modalList {
+  overflow-y: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  z-index: 998;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+tr:hover {
+  background-color: rgb(233, 233, 233);
+}
+table td, table th {
+  border: 1px solid lightgray;
+  padding: 2px;
+  text-align: center;
+}
+#modal-top {
+  background-color: white;
+  position: sticky;
+  top: 0px;
+  text-align: center;
+  height: 60px;
+  padding-top: 10px;
+}
+
+#modalTitle{
+  margin-top: 0px
+}

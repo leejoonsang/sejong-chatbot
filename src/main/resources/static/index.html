@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>세종대학교 챗봇</title>
+  <link rel="icon" type="image/png" href="./images/mascot.png">
+</head>
+<body>
+<div id="container">
+  <div id="top">
+    <div class="top-nav empty" id="empty1"></div>
+    <div class="top-nav empty" id="empty2"></div>
+    <div class="top-nav empty"></div>
+    <div class="top-nav"><span class="logo"></span></div>
+    <div class="top-nav empty"></div>
+    <div class="top-nav" id="list" class="auto-adjust-font">꿀교양리스트</div>
+    <div class="top-nav" id="feedback" class="auto-adjust-font">피드백</div>
+  </div>
+  <div class="middle"></div>
+  <div id="content">
+  </div>
+  <div class="middle"></div>
+  <div id="bottom">
+    <div id="form">
+      <label for="question"></label>
+      <input id="question" name="question" type="text" placeholder="질문을 입력하세요." onkeyup="checkText()">
+      <button type="button" class="btn_send" id="sendBtn">
+        <span id="send_logo"></span>
+      </button>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="quick_btn" id="potal">
+      세종대학교 포털 바로가기
+    </div>
+    <div class="quick_btn" id="homepage">
+      세종대학교 홈페이지 바로가기
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div id="modal-top">
+      <span class="close">&times;</span>
+      <h1 id="modalTitle">세종대학교 꿀 교양 리스트🌟</h1>
+    </div>
+    <div id="modalList">
+      <table>
+        <thead>
+        <th>학수번호</th>
+        <th>교과목명</th>
+        <th>이수구분</th>
+        <th>선택영역</th>
+        <th>학점</th>
+        <th>개설학기</th>
+        <th>온라인강의 여부</th>
+        <th>평가방식</th>
+        </thead>
+        <tbody id="tt">
+        <tr>
+          <td>009981</td>
+          <td>English Listening</td>
+          <td>교선</td>
+          <td>세계와지구촌</td>
+          <td>2</td>
+          <td>1, 2</td>
+          <td>⭕</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>009982</td>
+          <td>English Reading</td>
+          <td>교선</td>
+          <td>세계와지구촌</td>
+          <td>2</td>
+          <td>1, 2</td>
+          <td>⭕</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>006844</td>
+          <td>Intensive English</td>
+          <td>교선</td>
+          <td>세계와지구촌</td>
+          <td>3</td>
+          <td>1, 2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>007761</td>
+          <td>동아시아와한반도</td>
+          <td>교선</td>
+          <td>세계와지구촌</td>
+          <td>3</td>
+          <td>2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>009031</td>
+          <td>한국현대사의이해</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>3</td>
+          <td>1, 2</td>
+          <td>⭕</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>008913</td>
+          <td>동양고전강독1</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>1</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>006270</td>
+          <td>동양고전강독2</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>2</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>008914</td>
+          <td>서양고전강독1</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>1</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>008933</td>
+          <td>서양고전강독2</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>2</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>009057</td>
+          <td>서양고전강독3</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>1</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>009058</td>
+          <td>서양고전강독4</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>2</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>009938</td>
+          <td>동서양고전문학강독</td>
+          <td>교선</td>
+          <td>사상과역사</td>
+          <td>1</td>
+          <td>1, 2</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>007345</td>
+          <td>미술심리치료</td>
+          <td>교선</td>
+          <td>사회와문화</td>
+          <td>3</td>
+          <td>1, 2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>007565</td>
+          <td>우리차문화의이해</td>
+          <td>교선</td>
+          <td>사회와문화</td>
+          <td>2</td>
+          <td>1, 2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>006422</td>
+          <td>성과문화</td>
+          <td>교선</td>
+          <td>사회와문화</td>
+          <td>2</td>
+          <td>1, 2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>007779</td>
+          <td>현대인의정신건강과자기발견</td>
+          <td>교선</td>
+          <td>사회와문화</td>
+          <td>2</td>
+          <td>1, 2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>010358</td>
+          <td>행복한가정만들기</td>
+          <td>교선</td>
+          <td>사회와문화</td>
+          <td>3</td>
+          <td>1, 2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>004763</td>
+          <td>과학사</td>
+          <td>교선</td>
+          <td>자연과학기술</td>
+          <td>3</td>
+          <td>1</td>
+          <td>⭕</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>010410</td>
+          <td>K-MOOC:웨어러블컴퓨터디자인</td>
+          <td>교선</td>
+          <td>융합과창업</td>
+          <td>1</td>
+          <td>1, 2</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        <tr>
+          <td>007728</td>
+          <td>문화와경제</td>
+          <td>교선</td>
+          <td>사회와제도</td>
+          <td>3</td>
+          <td>2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>009034</td>
+          <td>디자인이노베이션</td>
+          <td>교선</td>
+          <td>예술과체육</td>
+          <td>2</td>
+          <td>2</td>
+          <td>❌</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>011238</td>
+          <td>우주자연인간</td>
+          <td>공필</td>
+          <td>-</td>
+          <td>1</td>
+          <td>1, 2 <br>(단과대학 별 상이)</td>
+          <td>⭕</td>
+          <td>GRADE</td>
+        </tr>
+        <tr>
+          <td>011183</td>
+          <td>취창업과진로설계</td>
+          <td>공필</td>
+          <td>-</td>
+          <td>1</td>
+          <td>1, 2</td>
+          <td>⭕</td>
+          <td>P/NP</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+</body>
+<script src="main.js"></script>
+</html>
